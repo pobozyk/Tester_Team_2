@@ -1,5 +1,8 @@
 wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
 
+#tymczasowa zmienna gender, do zmniany przez kod Kasi
+gender = 'k'
+
 # Sprawdzamy czy podany wiek jest liczbą
 if wiek.isdigit() == False:
 	exit("Wiek musi być liczbą albo podana liczba nie jest calkowita")
