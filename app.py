@@ -1,3 +1,8 @@
+region = input("Wybierz region (EUR/USA): ")
+if region == "EUR":
+    print("Wybrałeś region EUR (Europa).")
+elif region == "USA":
+    print("Wybrałeś region USA (Stany Zjednoczone")
 wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
 # Sprawdzamy czy podany wiek jest liczbą
 if wiek.isdigit() == False:
@@ -10,3 +15,4 @@ elif wiek>=40:
 	print("Uważaj w Twoim wieku nie przasadzaj ze spożyciem")
 else:
   exit("Jesteś za młoda/y na alkohol. Zapraszamy na disney.com")
+
