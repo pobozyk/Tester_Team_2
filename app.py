@@ -18,13 +18,16 @@ def wybor_regionu():
   return region
 
 def sprawdzenie_poprawnosci_wieku():
-  if wiek > 120:
-	  print('Wprowadzono wiek powyzej 120 lat. ')
-	  print('Czy na pewno masz tyle lat?')
+  if wiek.isdigit() == False:
+    exit("Wiek musi być liczbą albo podana liczba nie jest calkowita")
+  if int(wiek) > 120:
+    print('Wprowadzono wiek powyzej 120 lat. ')
+    print('Czy na pewno masz tyle lat?')
     exit("Zamykam aplikacje")
     # Sprawdzamy czy podany wiek jest liczbą
-  elif wiek.isdigit() == False:
-    exit("Wiek musi być liczbą albo podana liczba nie jest calkowita")    
+  else:
+    exit("Wiek musi być liczbą albo podana liczba nie jest calkowita")
+  return True
 
 def obslugaUSA():  
   if wybrany_region == "USA" and wiek<21:
@@ -40,7 +43,7 @@ def obslugaUSA():
     exit("Jesteś za młoda/y na alkohol. Zapraszamy na disney.com")
 
 def obslugaEUR():
-   if wybrany_region == "EUR" and wiek<18:
+  if wybrany_region == "EUR" and wiek<18:
     exit("Jesteś za młoda/y na alkohol. Zapraszamy na disney.com")
   if wiek >= 30 and gender == 'K':
     print("Otrzymujesz aperol spritz pierwszy gratis!")
@@ -54,7 +57,7 @@ def obslugaEUR():
 
 wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
 sprawdzenie_poprawnosci_wieku()
-wiek=int(wiek)    
+
     
 #Poczatek dzialania aplikacji
 gender = wybor_plci()
@@ -67,5 +70,5 @@ if wybrany_region == "USA":
 elif wybrany_region == "EUR":
   print("Wybrano region EUR")
   obslugaEUR()  
-else
+else:
   exit("Aplikacja nie obsługuje użytkowników z regionów innych niż EUR/USA")
