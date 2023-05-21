@@ -18,7 +18,6 @@ def wybor_regionu():
     return region
 
 def sprawdzenie_poprawnosci_wieku():
-    wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
     if wiek.isdigit() == False:
         exit("Wiek musi być liczbą albo podana liczba nie jest całkowita")
     elif int(wiek) > 120:
@@ -57,8 +56,8 @@ def obslugaEUR():
     else:
         exit("Jesteś za młoda/y na alkohol. Zapraszamy na disney.com")
 
-def propozycjaNowychProduktow():
-    # to do
+#def propozycjaNowychProduktow():
+    #
 
 def menuAplikacji(wybrana_opcja):
     if wybrana_opcja == "USA":
@@ -71,7 +70,8 @@ def menuAplikacji(wybrana_opcja):
 
 
 # Poczatek dzialania aplikacji
+wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
 sprawdzenie_poprawnosci_wieku()
-gender = wybor_plci()
+gender=wybor_plci()
 wybrany_region = wybor_regionu()
 menuAplikacji(wybrany_region)
