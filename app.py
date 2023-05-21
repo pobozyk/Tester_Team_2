@@ -8,7 +8,6 @@ def wybor_plci():
         exit("Wybor nieprawidlowy, wprowadz poprawnie K lub M")
     return gender
 
-
 def wybor_regionu():
     region = input("Wybierz region (EUR/USA): ")
     if region == "EUR":
@@ -17,7 +16,6 @@ def wybor_regionu():
     elif region == "USA":
         print("Wybrałeś region USA (Stany Zjednoczone)")
     return region
-
 
 def sprawdzenie_poprawnosci_wieku():
     if wiek.isdigit() == False:
@@ -58,18 +56,22 @@ def obslugaEUR():
     else:
         exit("Jesteś za młoda/y na alkohol. Zapraszamy na disney.com")
 
+#def propozycjaNowychProduktow():
+    #
 
-wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
-sprawdzenie_poprawnosci_wieku()
+def menuAplikacji(wybrana_opcja):
+    if wybrana_opcja == "USA":
+        obslugaUSA()
+
+    elif wybrana_opcja == "EUR":
+        obslugaEUR()
+    else:
+        exit("Aplikacja nie obsługuje użytkowników z regionów innych niż EUR/USA")
+
 
 # Poczatek dzialania aplikacji
-gender = wybor_plci()
+wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
+sprawdzenie_poprawnosci_wieku()
+gender=wybor_plci()
 wybrany_region = wybor_regionu()
-
-if wybrany_region == "USA":
-    obslugaUSA()
-
-elif wybrany_region == "EUR":
-    obslugaEUR()
-else:
-    exit("Aplikacja nie obsługuje użytkowników z regionów innych niż EUR/USA")
+menuAplikacji(wybrany_region)
