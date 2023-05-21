@@ -27,3 +27,7 @@ elif wiek>=40:
 	print("Uważaj w Twoim wieku nie przasadzaj ze spożyciem")
 else:
   exit("Jesteś za młoda/y na alkohol. Zapraszamy na disney.com")
+
+if wiek > 120:
+	print('Wprowadzono wiek powyzej 120 lat. ')
+	print('Czy na pewno masz tyle lat?')
