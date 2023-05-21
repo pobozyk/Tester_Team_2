@@ -1,7 +1,15 @@
-wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
+def wybor_plci():
+	gender = input("Podaj plec [K/M]:").upper()
+	if gender == "K":
+		print("woman")
+	elif gender == "M":
+		print("men")
+	else:
+		exit("Wybor nieprawidlowy")
 
-#tymczasowa zmienna gender, do zmniany przez kod Kasi
-gender = 'k'
+	return gender
+gender = wybor_plci()
+wiek = input("Podaj wiek użytkownika jako liczbe calkowitą:")
 
 # Sprawdzamy czy podany wiek jest liczbą
 if wiek.isdigit() == False:
